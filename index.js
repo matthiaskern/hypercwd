@@ -5,7 +5,7 @@ let curCwd;
 let uids = {};
 
 const setCwd = (store, pid) =>
-  exec(`lsof -p ${pid} | grep cwd | tr -s ' ' | cut -d ' ' -f9-`, (err, newCwd) => {
+  exec(`pwd`, (err, newCwd) => {
     if (err) {
       console.error(err);
     } else {
